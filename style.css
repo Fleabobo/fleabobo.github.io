@@ -22,6 +22,15 @@ body {
   overflow-x: hidden;
 }
 
+.preload body {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+body.loaded {
+  animation: bodyIntro 0.8s ease-out 0.15s forwards;
+}
+
 .container {
   width: min(1120px, calc(100% - 2rem));
   margin: 0 auto;
@@ -34,6 +43,8 @@ body {
   opacity: 0;
   transform: translateY(-18px);
   animation: headerIntro 0.8s ease-out 0.2s forwards;
+  animation-fill-mode: both;
+  will-change: opacity, transform;
 }
 
 .site-header::before {
@@ -235,6 +246,17 @@ h1 {
   from {
     opacity: 0;
     transform: translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bodyIntro {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
