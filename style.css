@@ -19,6 +19,7 @@ body {
   background: linear-gradient(135deg, var(--bg) 0%, #f5e5b8 100%);
   color: var(--text);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .container {
@@ -30,6 +31,9 @@ body {
   padding: 0.75rem 0 1rem;
   position: relative;
   margin-top: 0;
+  opacity: 0;
+  transform: translateY(-18px);
+  animation: headerIntro 0.8s ease-out 0.2s forwards;
 }
 
 .site-header::before {
@@ -42,6 +46,9 @@ body {
   background: linear-gradient(180deg, #0057b7 0%, #0057b7 20%, #c8102e 20%, #c8102e 40%, #000000 40%, #000000 60%, #ffd100 60%, #ffd100 80%, #009f3d 80%, #009f3d 100%);
   background-size: 100% 100%;
   pointer-events: none;
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: stripeIntro 1s ease 0.25s forwards;
 }
 
 .nav {
@@ -81,8 +88,22 @@ body {
   color: var(--text);
 }
 
+.nav-links a {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: navLinkIntro 0.65s ease-out forwards;
+}
+
+.nav-links a:nth-child(1) { animation-delay: 0.35s; }
+.nav-links a:nth-child(2) { animation-delay: 0.45s; }
+.nav-links a:nth-child(3) { animation-delay: 0.55s; }
+.nav-links a:nth-child(4) { animation-delay: 0.65s; }
+
 .page {
   padding: 3rem 0 4rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: contentIntro 0.85s ease-out 0.35s forwards;
 }
 
 .hero {
@@ -91,6 +112,9 @@ body {
   gap: 2rem;
   align-items: center;
   padding: 3rem 0 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: contentIntro 0.9s ease-out 0.45s forwards;
 }
 
 .eyebrow {
@@ -192,6 +216,61 @@ h1 {
   border-radius: 0.9rem;
   margin-bottom: 1rem;
   border: 1px solid rgba(0,0,0,0.06);
+}
+
+.actions .button {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: contentIntro 0.9s ease-out 0.55s forwards;
+}
+
+.hero-card {
+  border-left: 0.5rem solid var(--accent);
+  opacity: 0;
+  transform: translateY(18px);
+  animation: contentIntro 0.95s ease-out 0.55s forwards;
+}
+
+@keyframes headerIntro {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes stripeIntro {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes navLinkIntro {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contentIntro {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .contact-layout {
