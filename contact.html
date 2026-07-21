@@ -34,16 +34,18 @@
             Whether you need a launch page, a polished website, or a fresh visual direction,
             I’d love to hear about your next idea.
           </p>
-          <p>Email: hello@alexmorgan.dev</p>
-          <p>Location: London, UK</p>
+          <p>Email: akselihaverinengithub@gmail.com</p>
+          <p>Location: Porvoo, Finland</p>
         </article>
 
         <article class="contact-card">
-          <form>
-            <input type="text" placeholder="Your name" />
-            <input type="email" placeholder="Your email" />
-            <textarea placeholder="Tell me about your project"></textarea>
-            <a class="button primary" href="mailto:hello@alexmorgan.dev">Send Message</a>
+          <form action="https://formsubmit.co/akselihaverinengithub@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="thank-you.html" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Your email" required />
+            <textarea name="message" placeholder="Tell me about your project" required></textarea>
+            <button class="button primary" type="submit">Send Message</button>
           </form>
         </article>
       </section>
