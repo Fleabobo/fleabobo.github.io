@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Me | Akseli</title>
+    <title>Akseli — Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,19 +21,19 @@
   <body>
     <header class="site-header">
       <nav class="nav container">
-        <a class="brand" href="index.html">Akseli</a>
+        <a class="brand" href="#top">Akseli</a>
         <div class="nav-links">
-          <a class="active" href="index.html">About</a>
-          <a href="skills.html">Skills</a>
-          <a href="projects.html">Projects</a>
-          <a href="contact.html">Contact</a>
+          <a class="active" href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
         </div>
       </nav>
     </header>
 
     <main class="container page">
-      <section class="hero">
-        <div>
+      <section class="hero" id="top">
+        <div class="hero-panel">
           <p class="eyebrow">Student • Web & Game Developer</p>
           <h1>I’m Akseli — blending logic, creativity, and code.</h1>
           <p class="hero-text">
@@ -41,20 +41,15 @@
             I love moving fast, building bold ideas, and bringing them to life the same way a breakaway rider chases the finish.
           </p>
           <div class="actions">
-            <a class="button primary" href="skills.html">Explore Skills</a>
-            <a class="button secondary" href="contact.html">Let’s Connect</a>
+            <a class="button primary" href="#skills">Explore Skills</a>
+            <a class="button secondary" href="#contact">Let’s Connect</a>
           </div>
         </div>
-        <div class="hero-card">
-          <h3>Tech & Tools</h3>
-          <ul>
-            <li>HTML/CSS</li>
-            <li>JavaScript</li>
-            <li>Unity</li>
-            <li>Git & GitHub</li>
-            <li>VS Code</li>
-          </ul>
-        </div>
+      </section>
+
+      <section class="section-heading" id="about">
+        <p class="eyebrow">About</p>
+        <h1>Building experiences with both design and code.</h1>
       </section>
 
       <section class="info-grid">
@@ -77,6 +72,72 @@
           <p>
             When I’m not at my keyboard, I’m usually road cycling in summer or skiing in winter.
           </p>
+        </article>
+      </section>
+
+      <section class="section-heading" id="skills">
+        <p class="eyebrow">Skills & Interests</p>
+        <h1>Building with curiosity, creativity, and a strong technical foundation.</h1>
+      </section>
+
+      <section class="card">
+        <h3>Core Skills</h3>
+        <ul class="skills-list">
+          <li>HTML & CSS</li>
+          <li>JavaScript</li>
+          <li>Responsive Web Design</li>
+          <li>Unity</li>
+          <li>Git & GitHub</li>
+          <li>VS Code</li>
+        </ul>
+      </section>
+
+      <section class="section-heading" id="projects">
+        <p class="eyebrow">Selected Work</p>
+        <h1>Projects that balance form and function.</h1>
+      </section>
+
+      <section class="project-grid">
+        <article class="project-card">
+          <img
+            class="project-image"
+            src="https://img.itch.zone/aW1hZ2UvNDQyMTYwNi8yODY0NTc2MS5wbmc=/250x600/YRSLGW.png"
+            alt="Polarity game cover"
+          />
+          <h3>Polarity</h3>
+          <p>
+            A game made for the Finnish College Game Jam 10, created and shared on itch.io.
+            It was my first game ever published, built during a 1-week and 4-day jam challenge,
+            and it highlights my interest in game development and interactive design.
+          </p>
+          <a class="button secondary" href="https://fleabobo.itch.io/polarity" target="_blank" rel="noopener noreferrer">View on itch.io</a>
+        </article>
+      </section>
+
+      <section class="section-heading" id="contact">
+        <p class="eyebrow">Let’s connect</p>
+        <h1>Ready to build something memorable?</h1>
+      </section>
+
+      <section class="contact-layout">
+        <article class="contact-card">
+          <p>
+            Whether you need a launch page, a polished website, or a fresh visual direction,
+            I’d love to hear about your next idea.
+          </p>
+          <p>Email: akselihaverinengithub@gmail.com</p>
+          <p>Location: Porvoo, Finland</p>
+        </article>
+
+        <article class="contact-card">
+          <form action="https://formsubmit.co/akselihaverinengithub@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="thank-you.html" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Your email" required />
+            <textarea name="message" placeholder="Tell me about your project" required></textarea>
+            <button class="button primary" type="submit">Send Message</button>
+          </form>
         </article>
       </section>
     </main>
