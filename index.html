@@ -67,6 +67,40 @@ footer{padding:36px 0 56px;color:var(--mute);font-size:14px;border-top:1px solid
 </style>
 </head>
 <body>
+<div class="intro" id="intro" aria-label="Akseli portfolio introduction">
+  <div class="intro-inner">
+    <span class="intro-kicker">HELLO, I'M</span>
+    <div class="intro-name" aria-label="Akseli">AKSELI</div>
+    <div class="intro-track"><i></i></div>
+  </div>
+  <button class="intro-skip" id="introSkip" type="button">Skip intro</button>
+</div>
+<style>
+.intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;overflow:hidden;background:#141414;color:#fff;transition:clip-path .8s cubic-bezier(.77,0,.18,1),opacity .8s ease;clip-path:inset(0)}
+.intro::before,.intro::after{content:"";position:absolute;inset:-20%;pointer-events:none}
+.intro::before{background:linear-gradient(115deg,transparent 35%,rgba(143,168,255,.09) 50%,transparent 65%);transform:translateX(-70%) rotate(8deg);animation:intro-sweep 1.25s .2s ease-out forwards}
+.intro::after{opacity:.12;background-image:linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.14) 1px,transparent 1px);background-size:22px 22px;mask-image:radial-gradient(circle,#000 0,transparent 68%)}
+.intro-inner{position:relative;z-index:1;width:min(620px,80vw);text-align:center}
+.intro-kicker{display:block;margin-bottom:8px;font:700 14px/1 "Pixelify Sans",monospace;letter-spacing:.32em;color:#8fa8ff;opacity:0;animation:intro-kicker .5s .15s ease forwards}
+.intro-name{font:700 clamp(68px,16vw,150px)/.85 "Pixelify Sans",monospace;letter-spacing:-.06em;clip-path:inset(0 100% 0 0);filter:blur(8px);animation:intro-reveal 1s .25s cubic-bezier(.77,0,.18,1) forwards}
+.intro-track{height:4px;margin:28px auto 0;background:#ffffff20;overflow:hidden}
+.intro-track i{display:block;width:100%;height:100%;background:#8fa8ff;transform:translateX(-100%) scaleX(.6);animation:intro-loading 1.25s .25s cubic-bezier(.77,0,.18,1) forwards}
+.intro-skip{position:absolute;z-index:2;right:max(20px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));border:1px solid #ffffff40;border-radius:99px;background:#141414;color:#fff;padding:8px 14px;font:600 13px "Bricolage Grotesque",sans-serif;cursor:pointer}
+.intro-skip:hover{border-color:#8fa8ff;color:#8fa8ff}
+.intro.exit{clip-path:inset(0 0 100% 0);pointer-events:none}
+.intro.exit .intro-inner{opacity:0;transition:opacity .25s ease}
+@keyframes intro-reveal{to{clip-path:inset(0);filter:blur(0)}}
+@keyframes intro-loading{to{transform:translateX(0) scaleX(1)}}
+@keyframes intro-sweep{to{transform:translateX(70%) rotate(8deg)}}
+@keyframes intro-kicker{to{opacity:1}}
+@media (max-width:600px){.intro-track{margin-top:20px}.intro-name{font-size:21vw}}
+@media (prefers-reduced-motion:reduce){.intro::before,.intro-name,.intro-kicker,.intro-track i{animation:none!important}.intro-name{clip-path:none;filter:none}.intro-kicker{opacity:1}.intro-track i{transform:none}}
+</style>
+<script>
+(()=>{const intro=document.querySelector("#intro");const skip=document.querySelector("#introSkip");const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;let closing=false;document.documentElement.style.overflow="hidden";
+const close=()=>{if(closing)return;closing=true;document.documentElement.style.overflow="";intro.classList.add("exit");setTimeout(()=>intro.remove(),reduced?0:800)};
+skip.addEventListener("click",close);addEventListener("keydown",e=>{if(e.key==="Escape")close()});setTimeout(close,reduced?0:1800)})();
+</script>
 <nav><div class="wrap"><b>Akseli</b><a href="#notes">About</a><a href="#tools">Tools</a><a href="#work">Work</a><a href="#path">Path</a><a href="#faq">FAQ</a><a href="#find">Find me</a></div></nav>
 
 <main>
