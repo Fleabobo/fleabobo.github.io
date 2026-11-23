@@ -6,7 +6,7 @@
 <title>Akseli, web and game developer</title>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#e9edf1;--ink:#141414;--mute:#566070;--card:#fff;--line:#c9d0da;--sig:#2f5bff;--hot:#ff5a36;--ok:#12a150;--px:"Pixelify Sans","Courier New",monospace;--gut:max(20px,calc((100vw - 1000px)/2));
+:root{--bg:#dfe4e8;--ink:#141414;--mute:#414956;--card:#fff;--line:#aeb6c1;--sig:#2f5bff;--hot:#ff5a36;--ok:#12a150;--px:"Pixelify Sans","Courier New",monospace;--gut:max(20px,calc((100vw - 1000px)/2));
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 
 .dark{--bg:#1e1e1e;--ink:#e9edf1;--mute:#9aa3b2;--card:#2a2a2a;--line:#3d3d3d;--sig:#8fa8ff;background:var(--bg);color:var(--ink)}
@@ -106,9 +106,9 @@ skip.addEventListener("click",close);addEventListener("keydown",e=>{if(e.key==="
 <main>
 <header class="hero">
   <span class="pill"><i class="dot" id="dot"></i><span id="avail"></span></span>
-  <h1>I'm Akseli. Logic, creativity and code.</h1>
+  <h1>I build digital ideas with logic and creativity.</h1>
   <p class="lede" id="status"></p>
-  <div class="btns"><a class="btn" href="#contact">Let's connect</a><a class="btn alt" href="#work">See my projects</a></div>
+  <div class="btns"><a class="btn" href="mailto:akselihaverinengithub@gmail.com?subject=Portfolio%20inquiry&amp;body=Hi%20Akseli%2C%0D%0A%0D%0AI'm%20interested%20in%20working%20with%20you.%0D%0A%0D%0A">Let's connect</a><a class="btn alt" href="#work">Explore my projects</a></div>
   <div class="stats">
     <div class="stat"><small>Games published</small><strong>3</strong></div>
     <div class="stat"><small>Fastest build</small><strong>64 hours</strong></div>
@@ -131,10 +131,6 @@ skip.addEventListener("click",close);addEventListener("keydown",e=>{if(e.key==="
   <div class="tools">
     <div class="card"><h3>Project roulette</h3><p>Spin for one of my projects.</p>
       <div class="out" id="rout">?</div><button class="btn" id="spin">Spin</button></div>
-    <div class="card"><h3>Timeline estimator</h3><p>Rough build time for your site.</p>
-      <p><label>Type<br><select id="etype"><option value="1">Landing page</option><option value="2.5">Portfolio</option><option value="4">Web app</option></select></label></p>
-      <p><label>Pages<br><input type="number" id="epages" value="5" min="1" max="40" style="width:100px;padding:9px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink)"></label></p>
-      <div class="out" id="eout" aria-live="polite"></div></div>
     <div class="card"><h3>Know my games?</h3><p>Quick quiz about my projects.</p>
       <div class="out" id="gq"></div><div class="chips" id="gopts"></div><p id="gscore"></p></div>
   </div>
@@ -160,13 +156,14 @@ skip.addEventListener("click",close);addEventListener("keydown",e=>{if(e.key==="
   <details><summary>What do you do?</summary><p>I'm a student at Careeria studying web and game development.</p></details>
   <details><summary>What can you build?</summary><p>Launch pages, polished websites and fresh visual directions, plus games.</p></details>
   <details><summary>Where are you based?</summary><p>Porvoo, Finland.</p></details>
+  <details><summary>Are you available for an internship?</summary><p>Yes. I am open to remote internships or on-site opportunities near Porvoo. The internship placement and start date will be arranged with my school.</p></details>
   <details><summary>What do you do outside coding?</summary><p>Road cycling in summer and skiing in winter.</p></details>
 </section>
 
 <section id="find">
   <h2>Where to find me</h2>
-  <div class="links"><a href="https://github.com/fleabobo">GitHub</a><a href="https://fleabobo.itch.io">itch.io</a><a href="mailto:akselihaverinengithub@gmail.com">Email</a></div>
-  <p id="contact" class="sub" style="margin-top:20px">Ready to build something memorable? Launch page, polished website or a fresh visual direction: <a href="mailto:akselihaverinengithub@gmail.com">akselihaverinengithub@gmail.com</a></p>
+  <div class="links"><a href="https://github.com/fleabobo">GitHub</a><a href="https://fleabobo.itch.io">itch.io</a><a href="mailto:akselihaverinengithub@gmail.com?subject=Portfolio%20inquiry&amp;body=Hi%20Akseli%2C%0D%0A%0D%0AI'm%20interested%20in%20working%20with%20you.%0D%0A%0D%0A" aria-label="Send Akseli an email">Email</a></div>
+  <p id="contact" class="sub" style="margin-top:20px">Open to internships — remote opportunities or on-site roles near Porvoo are welcome. The placement and start date will be arranged with my school. Let’s build something memorable together: <a href="mailto:akselihaverinengithub@gmail.com?subject=Internship%20inquiry&amp;body=Hi%20Akseli%2C%0D%0A%0D%0AI'm%20interested%20in%20discussing%20an%20internship%20opportunity%20with%20you.%0D%0A%0D%0A">akselihaverinengithub@gmail.com</a></p>
 </section>
 </main>
 <footer><div class="wrap">© 2026 Akseli. Porvoo, Finland.</div></footer>
@@ -174,7 +171,7 @@ skip.addEventListener("click",close);addEventListener("keydown",e=>{if(e.key==="
 <script>
 // ---- EDIT ME ----
 const CFG={available:true,
-status:"Student at Careeria, passionate about web and game development. I love moving fast, building bold ideas and bringing them to life the way a breakaway rider chases the finish."};
+status:"Student at Careeria, creating thoughtful websites and engaging games. Open to remote internships and on-site opportunities near Porvoo, with placement arranged through school."};
 const NOTES=[
  {t:"About me",a:"About",d:"Studying at Careeria and building a strong foundation in web and game development. I combine careful problem-solving with creative design."},
  {t:"What drives me",a:"About",d:"Creating cool ideas and bringing them to life, from polished web interfaces to interactive game mechanics."},
@@ -184,14 +181,14 @@ const NOTES=[
  {t:"Road cycling",a:"Outside coding",d:"My summer hobby."},
  {t:"Skiing",a:"Outside coding",d:"My winter hobby."}];
 const WORK=[
- {n:"Polarity",y:"Finnish College Game Jam 10",c:"#2f5bff",k:"Game",i:"polarity.png",u:"https://fleabobo.itch.io/polarity"},
- {n:"Oceans Beneath",y:"Assembly Game Jam 2026",c:"#0b8fa8",k:"Game",i:"oceans.png",u:"https://fleabobo.itch.io/oceans-beneath"},
- {n:"Clean Sweep",y:"Finnish College Jam #11",c:"#ff5a36",k:"Game",i:"cleansweep.png",u:"https://fleabobo.itch.io/clean-sweep"}];
+ {n:"Polarity",y:"Finnish College Game Jam 10",c:"#2f5bff",k:"Game",team:"Solo project",i:"polarity.png",u:"https://fleabobo.itch.io/polarity"},
+ {n:"Oceans Beneath",y:"Assembly Game Jam 2026",c:"#0b8fa8",k:"Game",team:"1 collaborator",i:"oceans.png",u:"https://fleabobo.itch.io/oceans-beneath"},
+ {n:"Clean Sweep",y:"Finnish College Jam #11",c:"#ff5a36",k:"Game",team:"Solo project",i:"cleansweep.png",u:"https://fleabobo.itch.io/clean-sweep"}];
 const PATH=[["2025","Started studying at Careeria"],["Finnish College Game Jam 10","Published Polarity, my first game ever, in a 1-week and 4-day jam"],["Assembly Game Jam 2026","Made Oceans Beneath in 64 hours, theme “Beneath”"],["Finnish College Jam #11","Created Clean Sweep, a top-down noir city space shooter"],["Now","Studying web and game development at Careeria"]];
 const STACK=[["Which was my first game ever published?","Polarity","Oceans Beneath","Clean Sweep"],["How long did Oceans Beneath take to make?","64 hours","24 hours","One week"],["What was the Assembly Game Jam 2026 theme?","Beneath","Signal","Echo"],["Where do I study?","Careeria","Aalto","Haaga-Helia"],["Which jam was Polarity made for?","Finnish College Game Jam 10","Assembly Game Jam 2026","Finnish College Jam #11"],["How long did the Polarity jam last?","1 week and 4 days","48 hours","One month"],["Which game is a top-down space shooter?","Clean Sweep","Polarity","Oceans Beneath"],["What do I do in summer?","Road cycling","Rowing","Golf"],["What do I do in winter?","Skiing","Ice hockey","Curling"],["Where am I based?","Porvoo","Helsinki","Tampere"]];
 // ---- /EDIT ----
 const $=s=>document.querySelector(s);
-$("#avail").textContent=CFG.available?"Available":"Fully booked";$("#dot").classList.toggle("off",!CFG.available);
+$("#avail").textContent=CFG.available?"Open to internships · Remote or near Porvoo":"Fully booked";$("#dot").classList.toggle("off",!CFG.available);
 $("#status").textContent=CFG.status;
 // notes
 let area="All";const areas=["All",...new Set(NOTES.map(n=>n.a))];
@@ -201,14 +198,10 @@ const r=NOTES.filter(n=>(area==="All"||n.a===area)&&(n.t+n.d).toLowerCase().incl
 $("#notegrid").innerHTML=r.length?r.map(n=>`<div class="card"><h3>${n.t}<span class="tag">${n.a}</span></h3><p>${n.d}</p></div>`).join(""):"<p>No notes match. Clear the search or pick another area.</p>"}
 $("#chips").onclick=e=>{if(e.target.dataset.a){area=e.target.dataset.a;drawChips();drawNotes()}};$("#q").oninput=drawNotes;drawChips();drawNotes();
 // work + path
-$("#workgrid").innerHTML=WORK.map(w=>`<a href="${w.u}" target="_blank" rel="noopener"><div class="ph-w"><img src="${w.i}" alt="${w.n} cover artwork"></div><span><b>${w.n}</b><br>${w.k}, ${w.y}</span></a>`).join("");
+$("#workgrid").innerHTML=WORK.map(w=>`<a href="${w.u}" target="_blank" rel="noopener"><div class="ph-w"><img src="${w.i}" alt="${w.n} cover artwork"></div><span><b>${w.n}</b><br>${w.k} · ${w.team}<br>${w.y}</span></a>`).join("");
 $("#tl").innerHTML=PATH.map(p=>`<li><time>${p[0]}</time><h3>${p[1]}</h3></li>`).join("");
 // roulette
 $("#spin").onclick=()=>{const o=$("#rout");let i=0;const t=setInterval(()=>{const w=WORK[Math.floor(Math.random()*WORK.length)];o.textContent=`${w.n} (${w.k}, ${w.y})`;if(++i>10)clearInterval(t)},70)};
-// estimator
-function est(){const w=+$("#etype").value*Math.max(1,+$("#epages").value||1)*0.6;const lo=Math.max(1,Math.round(w)),hi=lo+Math.max(1,Math.round(lo*.4));
-$("#eout").textContent=`About ${lo} to ${hi} weeks`}
-$("#etype").onchange=est;$("#epages").oninput=est;est();
 // guess
 const ROUND=5;let deck=[],gi=0,gs=0;
 function nextQ(){if(!deck.length)deck=STACK.map((_,i)=>i).sort(()=>Math.random()-.5);return STACK[deck.pop()]}
