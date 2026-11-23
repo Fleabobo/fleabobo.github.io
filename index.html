@@ -1,153 +1,199 @@
 <!DOCTYPE html>
-<html lang="en" class="preload">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Akseli — Portfolio</title>
-    <link rel="stylesheet" href="ohnyfans.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ohno+Showcase&display=swap">
-    <script>
-      window.addEventListener('load', function() {
-        document.documentElement.classList.remove('preload');
-        document.body.classList.add('loaded');
-      });
-    </script>
-  </head>
-  <body>
-    <header class="site-header">
-      <nav class="nav container">
-        <a class="brand" href="#top">Akseli</a>
-        <div class="nav-links">
-          <a class="active" href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
-    </header>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Akseli, web and game developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e9edf1;--ink:#141414;--mute:#566070;--card:#fff;--line:#c9d0da;--sig:#2f5bff;--hot:#ff5a36;--ok:#12a150;--px:"Pixelify Sans","Courier New",monospace;--gut:max(20px,calc((100vw - 1000px)/2));
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 
-    <main class="container page">
-      <section class="hero" id="top">
-        <div class="hero-panel">
-          <p class="eyebrow">Student • Web & Game Developer</p>
-          <h1 data-text="CREATIVITY &amp; CODE.">CREATIVITY &amp; CODE.</h1>
-          <p class="hero-text">
-            I’m a student at Careeria who’s passionate about web and game development.
-            I love moving fast, building bold ideas, and bringing them to life the same way a breakaway rider chases the finish.
-          </p>
-          <div class="actions">
-            <a class="button primary" href="#skills">Explore Skills</a>
-            <a class="button secondary" href="#contact">Let’s Connect</a>
-          </div>
-        </div>
-      </section>
+.dark{--bg:#1e1e1e;--ink:#e9edf1;--mute:#9aa3b2;--card:#2a2a2a;--line:#3d3d3d;--sig:#8fa8ff;background:var(--bg);color:var(--ink)}
+.gl{display:block;width:100%;height:auto;image-rendering:pixelated}
+h1,h2,nav b{font-family:var(--px);font-weight:700;text-transform:uppercase}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 "Bricolage Grotesque",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sig);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;gap:18px;align-items:center;height:56px;overflow-x:auto;white-space:nowrap}
+nav b{font-weight:800;margin-right:auto}nav a{text-decoration:none;color:var(--mute);font-size:15px}nav a:hover{color:var(--ink)}
+.pill{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:5px 14px;font-size:14px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 var(--ok);animation:p 2s infinite}
+.dot.off{background:var(--hot);animation:none}
+@keyframes p{70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+@media (prefers-reduced-motion:reduce){.dot{animation:none}html{scroll-behavior:auto}}
+header.hero{padding:72px var(--gut) 56px}
+h1{font-size:clamp(38px,8vw,92px);line-height:1;margin:18px 0 14px}
+.lede{max-width:48ch;color:var(--mute);font-size:19px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}
+.btn{border:2px solid var(--ink);border-radius:10px;padding:10px 18px;font:600 16px inherit;font-family:inherit;background:var(--ink);color:var(--bg);text-decoration:none;cursor:pointer}
+.btn.alt{background:transparent;color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:28px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.stat small{color:var(--mute);display:block}.stat strong{font-size:28px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+section{padding:56px var(--gut) 64px}
+h2{font-size:clamp(34px,6.5vw,64px);line-height:1;margin:0 0 12px}
+.sub{color:var(--mute);margin:0 0 24px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 18px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:6px 14px;font:inherit;font-size:14px;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--sig);border-color:var(--sig);color:#fff}
+input[type=search],select{width:100%;max-width:420px;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.card h3{margin:0 0 6px;font-size:19px}.card p{margin:0;color:var(--mute);font-size:15px}
+.tag{font-size:12px;border-radius:6px;padding:2px 8px;background:var(--bg);border:1px solid var(--line);margin-left:6px;vertical-align:middle;font-weight:400}
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.out{min-height:84px;margin-top:12px;font-size:20px;font-weight:600;letter-spacing:-.01em}
+.work{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.work a{display:block;text-decoration:none;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.work .ph{aspect-ratio:4/3;display:grid;place-items:center;font-size:44px;font-weight:800;color:#fff;letter-spacing:-.04em;transition:transform .25s}
+.work a:hover .ph{transform:scale(1.04)}.work .ph-w{overflow:hidden}
+.work img{width:100%;aspect-ratio:4/3;display:block;object-fit:cover;transition:transform .25s}.work a:hover img{transform:scale(1.04)}
+.work span{display:block;padding:12px 14px;font-size:15px}
+ol.tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+ol.tl li{padding:0 0 22px 22px;position:relative}
+ol.tl li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--sig)}
+ol.tl time{color:var(--mute);font-size:14px}ol.tl h3{margin:0;font-size:18px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}details p{margin:10px 0 0;color:var(--mute)}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+blockquote p{margin:0 0 10px;font-size:18px}blockquote cite{color:var(--mute);font-size:14px;font-style:normal}
+.links{display:flex;flex-wrap:wrap;gap:10px}.links a{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:8px 14px;text-decoration:none}
+.links a:hover{border-color:var(--sig)}
+footer{padding:36px 0 56px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Akseli</b><a href="#notes">About</a><a href="#tools">Tools</a><a href="#work">Work</a><a href="#path">Path</a><a href="#faq">FAQ</a><a href="#find">Find me</a></div></nav>
 
-      <section class="section-heading" id="about">
-        <p class="eyebrow">About</p>
-        <h1>Building experiences with both design and code.</h1>
-      </section>
+<main>
+<header class="hero">
+  <span class="pill"><i class="dot" id="dot"></i><span id="avail"></span></span>
+  <h1>I'm Akseli. Logic, creativity and code.</h1>
+  <p class="lede" id="status"></p>
+  <div class="btns"><a class="btn" href="#contact">Let's connect</a><a class="btn alt" href="#work">See my projects</a></div>
+  <div class="stats">
+    <div class="stat"><small>Games published</small><strong>3</strong></div>
+    <div class="stat"><small>Fastest build</small><strong>64 hours</strong></div>
+    <div class="stat"><small>Studying at</small><strong>Careeria</strong></div>
+  </div>
+</header>
 
-      <section class="info-grid">
-        <article class="card">
-          <h3>About Me</h3>
-          <p>
-            I’m currently studying at Careeria and building a strong foundation in web and game development.
-            I enjoy combining careful problem-solving with creative design.
-          </p>
-        </article>
-        <article class="card">
-          <h3>What Drives Me</h3>
-          <p>
-            I love being able to create cool ideas and bring them to life,
-            whether that means building polished web interfaces or designing interactive game mechanics.
-          </p>
-        </article>
-        <article class="card">
-          <h3>Outside of Coding</h3>
-          <p>
-            When I’m not at my keyboard, I’m usually road cycling in summer or skiing in winter.
-          </p>
-        </article>
-      </section>
+<section id="notes">
+  <h2>About me</h2>
+  <p class="sub">Who I am, what drives me and what I work with. Search or filter by area.</p>
+  <input type="search" id="q" placeholder="Search, try “Unity”" aria-label="Search notes">
+  <div class="chips" id="chips" role="group" aria-label="Filter by area"></div>
+  <div class="grid" id="notegrid"></div>
+</section>
 
-      <section class="section-heading" id="skills">
-        <p class="eyebrow">Skills & Interests</p>
-        <h1>Building with curiosity, creativity, and a strong technical foundation.</h1>
-      </section>
+<canvas class="gl" data-d="up"></canvas>
+<section id="tools" class="dark">
+  <h2>The toolbox</h2>
+  <p class="sub">Small things I built for people who visit.</p>
+  <div class="tools">
+    <div class="card"><h3>Project roulette</h3><p>Spin for one of my projects.</p>
+      <div class="out" id="rout">?</div><button class="btn" id="spin">Spin</button></div>
+    <div class="card"><h3>Timeline estimator</h3><p>Rough build time for your site.</p>
+      <p><label>Type<br><select id="etype"><option value="1">Landing page</option><option value="2.5">Portfolio</option><option value="4">Web app</option></select></label></p>
+      <p><label>Pages<br><input type="number" id="epages" value="5" min="1" max="40" style="width:100px;padding:9px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink)"></label></p>
+      <div class="out" id="eout" aria-live="polite"></div></div>
+    <div class="card"><h3>Know my games?</h3><p>Quick quiz about my projects.</p>
+      <div class="out" id="gq"></div><div class="chips" id="gopts"></div><p id="gscore"></p></div>
+  </div>
+</section>
 
-      <section class="card">
-        <h3>Core Skills</h3>
-        <ul class="skills-list">
-          <li>HTML & CSS</li>
-          <li>JavaScript</li>
-          <li>Responsive Web Design</li>
-          <li>Unity</li>
-          <li>Git & GitHub</li>
-          <li>VS Code</li>
-        </ul>
-      </section>
+<canvas class="gl" data-d="down"></canvas>
+<section id="work">
+  <h2>Projects</h2>
+  <p class="sub">Three game jam games. Click one to open it on itch.io.</p>
+  <div class="work" id="workgrid"></div>
+</section>
 
-      <section class="section-heading" id="projects ">
-        <p class="eyebrow">Selected Work</p>
-        <h1>Projects that balance form and function.</h1>
-      </section>
+<canvas class="gl" data-d="up"></canvas>
+<section id="path" class="dark">
+  <h2>The path</h2>
+  <p class="sub">From my first published game to now.</p>
+  <ol class="tl" id="tl"></ol>
+</section>
 
-      <section class="project-grid">
-        <article class="project-card">
-          <img
-            class="project-image"
-            src="https://img.itch.zone/aW1hZ2UvNDQyMTYwNi8yODY0NTc2MS5wbmc=/250x600/YRSLGW.png"
-            alt="Polarity game cover"
-          />
-          <h3>Polarity</h3>
-          <p>
-            A game made for the Finnish College Game Jam 10, created and shared on itch.io.
-            It was my first game ever published, built during a 1-week and 4-day jam challenge,
-            and it highlights my interest in game development and interactive design.
-          </p>
-          <a class="button secondary" href="https://fleabobo.itch.io/polarity" target="_blank" rel="noopener noreferrer">View on itch.io</a>
-        </article>
+<canvas class="gl" data-d="down"></canvas>
+<section id="faq">
+  <h2>Things people ask</h2>
+  <details><summary>What do you do?</summary><p>I'm a student at Careeria studying web and game development.</p></details>
+  <details><summary>What can you build?</summary><p>Launch pages, polished websites and fresh visual directions, plus games.</p></details>
+  <details><summary>Where are you based?</summary><p>Porvoo, Finland.</p></details>
+  <details><summary>What do you do outside coding?</summary><p>Road cycling in summer and skiing in winter.</p></details>
+</section>
 
-        <article class="project-card">
-          <img
-            class="project-image"
-            src="KYxnsz.png"
-            alt="Oceans Beneath game cover"
-          />
-          <h3>Oceans Beneath</h3>
-          <p>
-            A game made in 64 hours for the Assembly Game Jam 2026 with the theme "Beneath".
-          </p>
-          <a class="button secondary" href="https://fleabobo.itch.io/oceans-beneath" target="_blank" rel="noopener noreferrer">View on itch.io</a>
-        </article>
-      </section>
+<section id="find">
+  <h2>Where to find me</h2>
+  <div class="links"><a href="https://github.com/fleabobo">GitHub</a><a href="https://fleabobo.itch.io">itch.io</a><a href="mailto:akselihaverinengithub@gmail.com">Email</a></div>
+  <p id="contact" class="sub" style="margin-top:20px">Ready to build something memorable? Launch page, polished website or a fresh visual direction: <a href="mailto:akselihaverinengithub@gmail.com">akselihaverinengithub@gmail.com</a></p>
+</section>
+</main>
+<footer><div class="wrap">© 2026 Akseli. Porvoo, Finland.</div></footer>
 
-      <section class="section-heading" id="contact">
-        <p class="eyebrow">Let’s connect</p>
-        <h1>Ready to build something memorable?</h1>
-      </section>
-
-      <section class="contact-layout">
-        <article class="contact-card">
-          <p>
-            Whether you need a launch page, a polished website, or a fresh visual direction,
-            I’d love to hear about your next idea.
-          </p>
-          <p>Email: akselihaverinengithub@gmail.com</p>
-          <p>Location: Porvoo, Finland</p>
-        </article>
-
-        <article class="contact-card">
-          <form action="https://formsubmit.co/akselihaverinengithub@gmail.com" method="POST">
-            <input type="hidden" name="_next" value="thank-you.html" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="text" name="name" placeholder="Your name" required />
-            <input type="email" name="email" placeholder="Your email" required />
-            <textarea name="message" placeholder="Tell me about your project" required></textarea>
-            <button class="button primary" type="submit">Send Message</button>
-          </form>
-        </article>
-      </section>
-    </main>
-  </body>
+<script>
+// ---- EDIT ME ----
+const CFG={available:true,
+status:"Student at Careeria, passionate about web and game development. I love moving fast, building bold ideas and bringing them to life the way a breakaway rider chases the finish."};
+const NOTES=[
+ {t:"About me",a:"About",d:"Studying at Careeria and building a strong foundation in web and game development. I combine careful problem-solving with creative design."},
+ {t:"What drives me",a:"About",d:"Creating cool ideas and bringing them to life, from polished web interfaces to interactive game mechanics."},
+ {t:"Web",a:"Skills",d:"HTML & CSS, JavaScript and responsive web design."},
+ {t:"Games",a:"Skills",d:"Unity and Unreal."},
+ {t:"Tools",a:"Skills",d:"Git & GitHub and VS Code."},
+ {t:"Road cycling",a:"Outside coding",d:"My summer hobby."},
+ {t:"Skiing",a:"Outside coding",d:"My winter hobby."}];
+const WORK=[
+ {n:"Polarity",y:"Finnish College Game Jam 10",c:"#2f5bff",k:"Game",i:"polarity.png",u:"https://fleabobo.itch.io/polarity"},
+ {n:"Oceans Beneath",y:"Assembly Game Jam 2026",c:"#0b8fa8",k:"Game",i:"oceans.png",u:"https://fleabobo.itch.io/oceans-beneath"},
+ {n:"Clean Sweep",y:"Finnish College Jam #11",c:"#ff5a36",k:"Game",i:"cleansweep.png",u:"https://fleabobo.itch.io/clean-sweep"}];
+const PATH=[["2025","Started studying at Careeria"],["Finnish College Game Jam 10","Published Polarity, my first game ever, in a 1-week and 4-day jam"],["Assembly Game Jam 2026","Made Oceans Beneath in 64 hours, theme “Beneath”"],["Finnish College Jam #11","Created Clean Sweep, a top-down noir city space shooter"],["Now","Studying web and game development at Careeria"]];
+const STACK=[["Which was my first game ever published?","Polarity","Oceans Beneath","Clean Sweep"],["How long did Oceans Beneath take to make?","64 hours","24 hours","One week"],["What was the Assembly Game Jam 2026 theme?","Beneath","Signal","Echo"],["Where do I study?","Careeria","Aalto","Haaga-Helia"],["Which jam was Polarity made for?","Finnish College Game Jam 10","Assembly Game Jam 2026","Finnish College Jam #11"],["How long did the Polarity jam last?","1 week and 4 days","48 hours","One month"],["Which game is a top-down space shooter?","Clean Sweep","Polarity","Oceans Beneath"],["What do I do in summer?","Road cycling","Rowing","Golf"],["What do I do in winter?","Skiing","Ice hockey","Curling"],["Where am I based?","Porvoo","Helsinki","Tampere"]];
+// ---- /EDIT ----
+const $=s=>document.querySelector(s);
+$("#avail").textContent=CFG.available?"Available":"Fully booked";$("#dot").classList.toggle("off",!CFG.available);
+$("#status").textContent=CFG.status;
+// notes
+let area="All";const areas=["All",...new Set(NOTES.map(n=>n.a))];
+function drawChips(){$("#chips").innerHTML=areas.map(a=>`<button class="chip" aria-pressed="${a===area}" data-a="${a}">${a}</button>`).join("")}
+function drawNotes(){const q=$("#q").value.toLowerCase();
+const r=NOTES.filter(n=>(area==="All"||n.a===area)&&(n.t+n.d).toLowerCase().includes(q));
+$("#notegrid").innerHTML=r.length?r.map(n=>`<div class="card"><h3>${n.t}<span class="tag">${n.a}</span></h3><p>${n.d}</p></div>`).join(""):"<p>No notes match. Clear the search or pick another area.</p>"}
+$("#chips").onclick=e=>{if(e.target.dataset.a){area=e.target.dataset.a;drawChips();drawNotes()}};$("#q").oninput=drawNotes;drawChips();drawNotes();
+// work + path
+$("#workgrid").innerHTML=WORK.map(w=>`<a href="${w.u}" target="_blank" rel="noopener"><div class="ph-w"><img src="${w.i}" alt="${w.n} cover artwork"></div><span><b>${w.n}</b><br>${w.k}, ${w.y}</span></a>`).join("");
+$("#tl").innerHTML=PATH.map(p=>`<li><time>${p[0]}</time><h3>${p[1]}</h3></li>`).join("");
+// roulette
+$("#spin").onclick=()=>{const o=$("#rout");let i=0;const t=setInterval(()=>{const w=WORK[Math.floor(Math.random()*WORK.length)];o.textContent=`${w.n} (${w.k}, ${w.y})`;if(++i>10)clearInterval(t)},70)};
+// estimator
+function est(){const w=+$("#etype").value*Math.max(1,+$("#epages").value||1)*0.6;const lo=Math.max(1,Math.round(w)),hi=lo+Math.max(1,Math.round(lo*.4));
+$("#eout").textContent=`About ${lo} to ${hi} weeks`}
+$("#etype").onchange=est;$("#epages").oninput=est;est();
+// guess
+const ROUND=5;let deck=[],gi=0,gs=0;
+function nextQ(){if(!deck.length)deck=STACK.map((_,i)=>i).sort(()=>Math.random()-.5);return STACK[deck.pop()]}
+function gq(){if(gi>=ROUND){$("#gq").textContent=`Round over. You got ${gs} of ${ROUND}.`;$("#gopts").innerHTML='<button class="chip" id="again">Play again</button>';return}
+const q=nextQ();$("#gq").textContent=`${gi+1}/${ROUND}  ${q[0]}`;
+$("#gopts").innerHTML=[...q.slice(1).keys()].sort(()=>Math.random()-.5).map(i=>`<button class="chip" data-i="${i}">${q[i+1]}</button>`).join("")}
+$("#gopts").onclick=e=>{if(e.target.id==="again"){gi=0;gs=0;$("#gscore").textContent="";gq();return}if(e.target.dataset.i===undefined)return;const ok=e.target.dataset.i==="0";if(ok)gs++;gi++;$("#gscore").textContent=(ok?"Correct. ":"Not quite. ")+`Score ${gs}/${gi}`;gq()};gq();
+// theme
+// pixel glitch dividers: constant flicker, density fades from solid to empty
+const still=matchMedia("(prefers-reduced-motion:reduce)").matches;
+function glitch(){document.querySelectorAll(".gl").forEach((c,i)=>{const W=document.documentElement.clientWidth,cell=Math.max(4,Math.round(W/280)),w=Math.ceil(W/cell),rows=11;
+c.width=w*cell;c.height=rows*cell;c.cell=cell;let s=i*7919+13;const rnd=()=>(s=s*16807%2147483647)/2147483647;const up=c.dataset.d==="up";c.cells=[];
+for(let r=0;r<rows;r++){const t=up?(r+.5)/rows:1-(r+.5)/rows;for(let k=0;k<w;k++)c.cells.push([k,r,Math.pow(t,1.4),rnd(),.12+rnd()*.5])}});paint(performance.now())}
+function paint(now){const ts=now/1000;document.querySelectorAll(".gl").forEach(c=>{if(!c.cells)return;const b=c.getBoundingClientRect();if(b.bottom<0||b.top>innerHeight)return;
+const x=c.getContext("2d");x.clearRect(0,0,c.width,c.height);x.fillStyle="#1e1e1e";const z=c.cell;
+for(const[k,r,p,u,v]of c.cells)if((u+ts*v)%1<p)x.fillRect(k*z,r*z,z,z)})}
+let last=0;function loop(now){if(now-last>70){last=now;paint(now)}requestAnimationFrame(loop)}
+glitch();let rz;addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(glitch,120)});
+if(!still)requestAnimationFrame(loop);
+</script>
+</body>
 </html>
